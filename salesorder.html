@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sale Orders</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <!-- Tabs for Active and Completed Sale Orders -->
+    <ul class="nav nav-tabs" id="saleOrderTabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="active-orders-tab" data-toggle="tab" href="#active-orders" role="tab" aria-controls="active-orders" aria-selected="true">Active Orders</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="completed-orders-tab" data-toggle="tab" href="#completed-orders" role="tab" aria-controls="completed-orders" aria-selected="false">Completed Orders</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="saleOrderTabsContent">
+        <div class="tab-pane fade show active" id="active-orders" role="tabpanel" aria-labelledby="active-orders-tab">
+            <!-- Content for Active Orders -->
+            <div class="mt-3">
+                <!-- Table or list of active orders -->
+                <p>List of active orders will be displayed here.</p>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="completed-orders" role="tabpanel" aria-labelledby="completed-orders-tab">
+            <!-- Content for Completed Orders -->
+            <div class="mt-3">
+                <!-- Table or list of completed orders -->
+                <p>List of completed orders will be displayed here.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- + Sale Order Button -->
+    <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#createSaleOrderModal">
+        + Sale Order
+    </button>
+
+    <!-- Modal for Creating a Sale Order -->
+    <div class="modal fade" id="createSaleOrderModal" tabindex="-1" aria-labelledby="createSaleOrderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createSaleOrderModalLabel">Create Sale Order</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="saleOrderForm">
+                        <div class="form-group">
+                            <label for="orderName">Order Name</label>
+                            <input type="text" class="form-control" id="orderName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="orderDescription">Order Description</label>
+                            <textarea class="form-control" id="orderDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="orderAmount">Order Amount</label>
+                            <input type="number" class="form-control" id="orderAmount" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
